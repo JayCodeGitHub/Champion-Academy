@@ -65,7 +65,7 @@ const PhoneNavigation = () => (
             </Link>
             <Link to="/fitness" activeClassName="active">
                 <PhoneNavigationItem>
-                    Sport Dla Karzdego
+                    Sport Dla Każdego
                 </PhoneNavigationItem>
             </Link>
             <Link to="/kontakt" activeClassName="active">

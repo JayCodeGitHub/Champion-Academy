@@ -97,7 +97,7 @@ color: white;
 const IndexPage = () => (
       <FeaturedTiles>
         <a href="http://karate-team.pl/" target="blank"><Tiled className="karateWrapper"><h1 className="karate">Karate Team <br/>Oborniki</h1></Tiled></a>
-        <Link to="/przedszkola"><Tiled className="obozyWrapper"><h1 className="przedszkola">Edukacja sportowa dla przedszkoli i szkuł<br/></h1></Tiled></Link>
+        <Link to="/przedszkola"><Tiled className="obozyWrapper"><h1 className="przedszkola">Edukacja sportowa dla przedszkoli i szkół<br/></h1></Tiled></Link>
         <Link to="/obozylato"><Tiled className="przedszkolaWrapper"><h1 className="obozy">Wypoczynek letni i zimowy szkolenia narciarskie i snowboardowe</h1></Tiled></Link>
         <a><Tiled className="obozynarciarskieWrapper"><h1>Twój Osobisty Trener.pl</h1></Tiled></a>
       </FeaturedTiles>

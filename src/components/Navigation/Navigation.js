@@ -94,7 +94,7 @@ const Navigation = () => (
         </ul>
       </NavigationItem>
       <NavigationItem className="drop-down-menu">
-        Sport Dla Karzdego
+        Sport Dla Każdego
         <ul>
           <Link to="/fitness"><li>Fitness/trening personalny</li></Link>
           <Link to="/sport50"><li>Sport 50+</li></Link>
