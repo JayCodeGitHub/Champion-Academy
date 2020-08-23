@@ -146,7 +146,7 @@ const IndexPage = ({ data }) => {
   <Wrapper>
     <Slider/>
     <Content>
-      <Title>Champion Academy <br/> <span>"Sport jako Pasja i Przygoda na całe Życie"</span></Title>
+      <Title>Champion Academy <br/> <span>"Sport jako Pasja i Przygoda na całe Życie Zacznij Ją z Nami"</span></Title>
     <FeaturedTilesWrapper>
       <Tiles/>
     </FeaturedTilesWrapper>

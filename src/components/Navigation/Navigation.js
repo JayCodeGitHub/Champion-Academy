@@ -2,6 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from 'gatsby'
 
+const NavigationItem = styled.li`
+  margin-left: 0px;
+  text-align: center;
+  padding-top: 0.5vw;
+  max-width: 8.33333vw;
+`
 const NavigationWrapper = styled.div`
   a {
     color: inherit;
@@ -45,6 +51,9 @@ const NavigationWrapper = styled.div`
   .special {
     padding-top: 0.5vw;
   }
+  .specialitem {
+    padding: 0px;
+  }
 `
 
 const Nav = styled.ul`
@@ -59,12 +68,6 @@ const Nav = styled.ul`
 
   
 `
-const NavigationItem = styled.li`
-  margin-left: 0px;
-  text-align: center;
-  padding-top: 0.5vw;
-  max-width: 8.33333vw;
-`
 
 
 const Navigation = () => (
@@ -72,12 +75,12 @@ const Navigation = () => (
     <Nav>
       <Link to="/" activeClassName="active">
         <NavigationItem>
-          domek
+          Home
         </NavigationItem>
       </Link>
       <Link to="/przedszkola" activeClassName="active">
-        <NavigationItem>
-          Przedszkola
+        <NavigationItem className="specialitem">
+          Edukacja Dla Przedszkoli
         </NavigationItem>
       </Link>
       <Link to="/języki" activeClassName="active">
@@ -88,8 +91,8 @@ const Navigation = () => (
       <NavigationItem className="drop-down-menu special">
         Obozy
         <ul>
-          <Link to="/obozylato"><li>Lato2021</li></Link>
-          <Link to="/obozyzima"><li>Zima2021</li></Link>
+          <Link to="/obozylato"><li>Oferta Lato2021</li></Link>
+          <Link to="/obozyzima"><li>Oferta Zima2021</li></Link>
           <Link to="/obozynarty"><li>Szkoła Narciarsko Snowboardowa</li></Link>
         </ul>
       </NavigationItem>
@@ -107,7 +110,7 @@ const Navigation = () => (
         </NavigationItem>
       <Link to="/kontakt" activeClassName="active">
         <NavigationItem>
-          kontakt
+          Kontakt
         </NavigationItem>
       </Link>
     </Nav>

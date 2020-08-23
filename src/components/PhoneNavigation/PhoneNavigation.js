@@ -35,12 +35,12 @@ const PhoneNavigation = () => (
         <PhoneNav>
             <Link to="/" activeClassName="active">
                 <PhoneNavigationItem>
-                    domek
+                    Home
                 </PhoneNavigationItem>
             </Link>
             <Link to="/przedszkola" activeClassName="active">
                 <PhoneNavigationItem>
-                    przedszkola
+                    Edukacja Dla Przedszkoli
                 </PhoneNavigationItem>
             </Link>
             <Link to="/języki" activeClassName="active">
@@ -50,12 +50,12 @@ const PhoneNavigation = () => (
             </Link>
             <Link to="/obozylato" activeClassName="active">
                 <PhoneNavigationItem>
-                    Lato 2021
+                    Oferta Lato 2021
                 </PhoneNavigationItem>
             </Link>
             <Link to="/obozyzima" activeClassName="active">
                 <PhoneNavigationItem>
-                    Zima 2021
+                    Oferta Zima 2021
                 </PhoneNavigationItem>
             </Link>
             <Link to="/obozynarty" activeClassName="active">
@@ -70,7 +70,7 @@ const PhoneNavigation = () => (
             </Link>
             <Link to="/kontakt" activeClassName="active">
                 <PhoneNavigationItem>
-                    kontakt
+                    Kontakt
                 </PhoneNavigationItem>
             </Link>
         </PhoneNav>
