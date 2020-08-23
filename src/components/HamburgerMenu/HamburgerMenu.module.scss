@@ -1,0 +1,120 @@
+$dark: #171717;
+$light: #FFFFFF;
+  
+  
+  
+  .hamburger {
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    margin-top: 3vw;
+
+  }
+  
+  .hamburger, .navigationn, .navigation__active {
+    transition: transform .3s .1s ease-in-out;
+  }
+  
+  .hamburger__active {
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    margin-top: 3vw;
+
+  }
+  
+  .hamburger__box {
+    width: 10vw;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  @mixin hamburger_line {
+    width: 100%;
+    height: 0.7vw;
+    background-color: $dark;
+    position: absolute;
+  }
+  
+  .hamburger__inner {
+    @include hamburger_line;
+    
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color .1s .2s ease-in-out;
+  }
+  
+  .hamburger__inner::before,
+  .hamburger__inner::after {
+    @include hamburger_line;
+    
+    content: '';
+    left: 0;
+    transition: transform .2s .2s ease-in-out;
+  } 
+  
+  .hamburger__inner::before {
+    top: -3vw;
+  }
+  
+  .hamburger__inner::after {
+    top: 3vw;
+  }
+  
+  .hamburger__active .hamburger__inner {
+      background-color: transparent;
+  }
+  
+  .hamburger__active .hamburger__inner:before {
+    transform: translateY(3vw) rotate(45deg);
+  }
+  
+  .hamburger__active .hamburger__inner:after {
+    transform: translateY(-3vw) rotate(-45deg);
+  }
+  
+  .navigationn {
+    min-height: 90vh;
+    width: 100vw;
+    background-color: $light;
+    position: absolute;
+    left: 0;
+    transform: translateX(-100vw);
+    top: 20vw;
+    z-index: 2;
+  }
+  
+  .navigation__active {
+    transform: translateX(0px);
+    min-height: 90vh;
+    width: 100vw;
+    background-color: $light;
+    position: absolute;
+    top: 10;
+    left: 0;
+    top: 20vw;
+    z-index: 2;
+    
+  }
+  
+  .navigation__list {
+    margin-top: 50px;
+    list-style: none;
+  }
+  
+  .navigation__item {
+    margin-bottom: 20px;
+    
+    a {
+      text-decoration: none;
+      color: $light;
+    }
+  }

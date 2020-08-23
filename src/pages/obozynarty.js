@@ -1,94 +1,31 @@
 import React from "react"
 import { graphql } from 'gatsby'
-import Slider from "../components/Slider/Slider"
-import styled from "styled-components"
-import Tiles from "../components/Tiles/Tiles"
+import Background from "../components/Background/Background"
+import styled from "styled-components";
 
-const Wrapper = styled.div`
+const BackGroundWrapper = styled.div`
 @media(max-width: 999px) {
   padding-top: 0px;
-  .film {
-    width: 95vw;
-    height: 50vw;
-    margin-left: 2.5vw;
-    margin-right: 2.5vw;
-}
 }
 padding-top: 5vw;
-@media(min-width: 1000px) {
-.film {
-    width: 70vw;
-    height: 40vw;
-}
-}
 `
 
 const Content = styled.div`
-text-align: center;
 @media(max-width: 999px) {
     width: 100vw;
     margin-right: 0vw;
     margin-left: 0vw;
     min-height: 100vh;
-    h1 {
-
-    }
 }
 @media(min-width: 1000px) {
     width: 70vw;
     margin-right: 15vw;
     margin-left: 15vw;
     min-height: 100vh;
-    
-}
-    
-`
-const FeaturedTilesWrapper = styled.div`
-  margin-bottom: 5vw;
-  margin-top: 2.5vw;
-`
-const Img = styled.img`
-@media(max-width: 999px) {
-  width: 95vw;
-  margin-left: 2.5vw;
-  margin-right: 2.5vw;
-}
-@media(min-width: 1000px) {
-  width: 70vw;
 }
 `
-const YoutubeLink = styled.h1`
-@media(min-width: 1000px) {
-  font-size: 3vw;
-}
-@media(max-width: 999px) {
-  font-size: 5vw;
-}
 
-  color: #b4407d;
-  :hover {
-    color: #2867a8;
-  }
-` 
 const Title = styled.h1`
-@media(min-width: 1000px) {
-  font-size: 2.5vw;
-  margin-bottom: 1vw;
-  span {
-    line-height: 3;
-    color: #b4407d;
-  }
-}
-@media(max-width: 999px) {
-  font-size: 5vw;
-  margin-bottom: 1vw;
-  span {
-    line-height: 3;
-    color: #b4407d;
-  }
-}
-`
-const TitleCms = styled.h1`
     color: #b4407d;
     text-align: center;
     @media(max-width: 999px) {
@@ -125,7 +62,16 @@ const Paragraph = styled.h3`
       font-size: 1.5vw;
     }
 `
-
+const Img = styled.img`
+    @media(max-width: 999px) {
+      width: 95vw;
+      margin-left: 2.5vw;
+      margin-right: 2.5vw;
+    }
+    @media(min-width: 1000px) {
+      width: 70vw;
+    }
+`
 const MainTitle = styled.h1`
   text-align: center;
   @media(max-width: 999px) {
@@ -138,26 +84,19 @@ const MainTitle = styled.h1`
   }
 `
 
-
-
-
-const IndexPage = ({ data }) => {
+const obozynartyPage = ({ data }) => {
   return (
-  <Wrapper>
-    <Slider/>
+  <>
+  <BackGroundWrapper>
+    <Background/>
+  </BackGroundWrapper>
     <Content>
-      <Title>Champion Academy <br/> <span>"Sport jako Pasja i Przygoda na całe Zycie"</span></Title>
-    <FeaturedTilesWrapper>
-      <Tiles/>
-    </FeaturedTilesWrapper>
-    <div><iframe title="film z obozu" className="film" src="https://www.youtube.com/embed/EI8I0RqFWPs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
-    <a href="https://www.youtube.com/channel/UClowW1j40-wJWn2CBrT8g9Q" target="blank"><YoutubeLink>Po więcej filmów zapraszamy na nasz kanał Youtube</YoutubeLink></a>
-    <MainTitle>{data.datoCmsMainpage.tytle}</MainTitle>
-      {data.datoCmsMainpage.content.map(item => {
+    <MainTitle>{data.datoCmsSkispage.tytle}</MainTitle>
+      {data.datoCmsSkispage.content.map(item => {
          const itemKey = Object.keys(item)[1];
           switch(itemKey) {
             case 'title':
-              return <TitleCms>{item.title}</TitleCms>
+              return <Title>{item.title}</Title>
             case 'titledwa':
               return <TitleTwo>{item.titledwa}</TitleTwo>
             case 'paragraph':
@@ -171,13 +110,14 @@ const IndexPage = ({ data }) => {
           }
        })}
     </Content>
-  </Wrapper>
+
+  </>
   )
 }
 
 export const query = graphql`
   query {
-    datoCmsMainpage {
+    datoCmsSkispage {
       tytle
       content {
         ... on DatoCmsTitle {
@@ -202,6 +142,4 @@ export const query = graphql`
   }
 `
 
-
-
-export default IndexPage
+export default obozynartyPage
